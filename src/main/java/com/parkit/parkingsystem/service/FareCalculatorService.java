@@ -10,33 +10,45 @@ public class FareCalculatorService {
             throw new IllegalArgumentException("Out time provided is incorrect:" + ticket.getOutTime().toString());
         }
 
-        int inHour = ticket.getInTime().getHours();
-        int outHour = ticket.getOutTime().getHours();
+        long inSeconds = ticket.getInTime().getTime(); // in time in seconds
+        long outSeconds = ticket.getOutTime().getTime(); // out time in seconds
 
-
-        int duration = outHour - inHour;
+        long durationInSeconds = (outSeconds - inSeconds);
+        long durationInHours = durationInSeconds / (60*60*1000); // milliseconds to hours
 
         switch (ticket.getParkingSpot().getParkingType()) {
             case CAR: {
-                if (duration<1){
-                    ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR*0.75);
+                if (durationInSeconds>(24*60*60*1000)) {
+                    ticket.setPrice((24 + durationInHours )* Fare.CAR_RATE_PER_HOUR);
                     break;
-                } else if (duration>24) {
-                    ticket.setPrice((24 + duration )* Fare.CAR_RATE_PER_HOUR);
+                } else if (durationInSeconds<(30*60*1000)){
+                    ticket.setPrice(0);
+                    break;
+                }  else if(durationInSeconds<(1000*60*60)){
+                    ticket.setPrice(0.75 * Fare.CAR_RATE_PER_HOUR);
                     break;
                 } else {
-                    ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
+                    ticket.setPrice(durationInHours* Fare.CAR_RATE_PER_HOUR);
                     break;
                 }
-
             }
             case BIKE: {
-                ticket.setPrice(duration * Fare.BIKE_RATE_PER_HOUR);
-                break;
+                if (durationInSeconds > (24 * 60 * 60 * 1000)) {
+                    ticket.setPrice((24 + durationInHours) * Fare.BIKE_RATE_PER_HOUR);
+                    break;
+                } else if (durationInSeconds < (30 * 60 * 1000)) {
+                    ticket.setPrice(0);
+                    break;
+                } else if (durationInSeconds < (1000 * 60 * 60)) {
+                    ticket.setPrice(0.75 * Fare.BIKE_RATE_PER_HOUR);
+                    break;
+                } else {
+                    ticket.setPrice(durationInHours * Fare.BIKE_RATE_PER_HOUR);
+                    break;
+                }
             }
             default:
                 throw new IllegalArgumentException("Unknown Parking Type");
         }
-
     }
 }
