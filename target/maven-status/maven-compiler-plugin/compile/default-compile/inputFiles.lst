@@ -1,0 +1,13 @@
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\App.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\config\DataBaseConfig.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\constants\DBConstants.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\constants\Fare.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\constants\ParkingType.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\dao\ParkingSpotDAO.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\dao\TicketDAO.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\model\ParkingSpot.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\model\Ticket.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\service\FareCalculatorService.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\service\InteractiveShell.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\service\ParkingService.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\main\java\com\parkit\parkingsystem\util\InputReaderUtil.java
