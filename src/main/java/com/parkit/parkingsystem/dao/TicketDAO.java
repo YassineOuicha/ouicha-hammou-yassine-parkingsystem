@@ -86,4 +86,31 @@ public class TicketDAO {
         }
         return false;
     }
+
+    public int getNbTicket(String vehicleRegNumber){
+        int countTicket =0;
+        Connection con = null;
+
+        try{
+            con = dataBaseConfig.getConnection(); // connection to database
+            PreparedStatement ps = con.prepareStatement(DBConstants.REGULAR_USER_COUNT); // prepare the sql query, Regular_User_Count
+
+            ps.setString(1, vehicleRegNumber); // the vehicle registration number is the parameter of the sql query
+
+            ResultSet rs = ps.executeQuery(); // executing the query and store the result in the variable rs
+
+            if(rs.next()){ // if the query returns a result
+                countTicket = rs.getInt(1); // then the first column of the result is the tickets count
+            }
+            dataBaseConfig.closeResultSet(rs); // close the result
+            dataBaseConfig.closePreparedStatement(ps); // close the statement
+
+        } catch ( Exception e){
+            logger.error("Error fetching ticket count for the vehicle with registration nulber : "  + vehicleRegNumber, e); // Log any occurred exception
+        } finally {
+            dataBaseConfig.closeConnection(con); // we ensure the connection is closed
+        }
+
+        return countTicket; // number of tickets of the specified vehicle, by this we will recognise the regular users if the count is more than once
+    }
 }
