@@ -5,6 +5,7 @@ import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
+import com.parkit.parkingsystem.service.FareCalculatorService;
 import com.parkit.parkingsystem.service.ParkingService;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,8 +15,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+
 import java.util.Date;
 
+import static com.parkit.parkingsystem.constants.ParkingType.CAR;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -29,13 +32,15 @@ public class ParkingServiceTest {
     private static ParkingSpotDAO parkingSpotDAO;
     @Mock
     private static TicketDAO ticketDAO;
+    @Mock
+    private static FareCalculatorService fareCalculatorService;
 
     @BeforeEach
-    private void setUpPerTest() {
+    public void setUpPerTest() {
         try {
             when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
 
-            ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false);
+            ParkingSpot parkingSpot = new ParkingSpot(1, CAR,false);
             Ticket ticket = new Ticket();
             ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
             ticket.setParkingSpot(parkingSpot);
@@ -52,10 +57,21 @@ public class ParkingServiceTest {
         }
     }
 
-    @Test
-    public void processExitingVehicleTest(){ // test to be completed
-        parkingService.processExitingVehicle();
-        verify(parkingSpotDAO, Mockito.times(1)).updateParking(any(ParkingSpot.class));
+    @Test // Mockito test N1
+    public void processExitingVehicleTest(){
+        // Arrange
+        when(ticketDAO.getNbTicket("ABCDEF")).thenReturn(1); // Mocks getNbTicket() to simulate a regular vehicle
+
+
+        // Act
+        parkingService.processExitingVehicle(); // methode to be tested
+
+        // Assert
+        verify(ticketDAO).getNbTicket("ABCDEF"); // Verify that getNbTicket() was called with the vehicle registration number
+        verify(ticketDAO).updateTicket(any(Ticket.class)); // Verify that updateTicket() was called on the ticket
+        verify(parkingSpotDAO, Mockito.times(1)).updateParking(any(ParkingSpot.class));  // Verify that updateParking() was called once on the parking spot
+
     }
+
 
 }
