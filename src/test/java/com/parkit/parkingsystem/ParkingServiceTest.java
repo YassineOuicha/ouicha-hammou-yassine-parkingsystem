@@ -19,6 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Date;
 
 import static com.parkit.parkingsystem.constants.ParkingType.CAR;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,8 +33,7 @@ public class ParkingServiceTest {
     private static ParkingSpotDAO parkingSpotDAO;
     @Mock
     private static TicketDAO ticketDAO;
-    @Mock
-    private static FareCalculatorService fareCalculatorService;
+
 
     @BeforeEach
     public void setUpPerTest() {
@@ -62,7 +62,6 @@ public class ParkingServiceTest {
         // Arrange
         when(ticketDAO.getNbTicket("ABCDEF")).thenReturn(1); // Mocks getNbTicket() to simulate a regular vehicle
 
-
         // Act
         parkingService.processExitingVehicle(); // methode to be tested
 
@@ -70,8 +69,23 @@ public class ParkingServiceTest {
         verify(ticketDAO).getNbTicket("ABCDEF"); // Verify that getNbTicket() was called with the vehicle registration number
         verify(ticketDAO).updateTicket(any(Ticket.class)); // Verify that updateTicket() was called on the ticket
         verify(parkingSpotDAO, Mockito.times(1)).updateParking(any(ParkingSpot.class));  // Verify that updateParking() was called once on the parking spot
-
     }
 
+    @Test // Mockito test N2
+    public void testProcessIncomingVehicle(){
+        // Arrange
+        ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR, false);
+        lenient().when(parkingService.getNextParkingNumberIfAvailable()).thenReturn(parkingSpot);
+        when(parkingService.getVehicleType()).thenReturn(ParkingType.CAR);
+        when(inputReaderUtil.readSelection()).thenReturn(1);
+
+        // Act
+        parkingService.processIncomingVehicle();
+
+        // Assert
+        verify(parkingService, Mockito.times(1)).getNextParkingNumberIfAvailable();
+        verify(parkingSpotDAO, times(1)).updateParking(any(ParkingSpot.class));
+        verify(ticketDAO, times(1)).saveTicket(any(Ticket.class));
+    }
 
 }
