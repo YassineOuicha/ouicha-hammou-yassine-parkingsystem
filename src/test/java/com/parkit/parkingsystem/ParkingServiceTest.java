@@ -127,4 +127,31 @@ public class ParkingServiceTest {
         assertTrue(generatedParkingSpot.isAvailable());
         verify(parkingSpotDAO, Mockito.times(1)).getNextAvailableSlot(ParkingType.CAR);
     }
+
+    @Test // Mockito test N5
+    public void testGetNextParkingNumberIfAvailableParkingNumberNotFound(){
+
+        // Arrange
+        when(parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR)).thenReturn(-1);
+
+        // Act
+        ParkingSpot parkingSpot = parkingService.getNextParkingNumberIfAvailable();
+
+        // Assert
+        assertNull(parkingSpot, "Error fetching parking number from DB. Parking slots might be full");
+
+    }
+
+    @Test // Mockito test N6
+    public void testGetNextParkingNumberIfAvailableParkingNumberWrongArgument(){
+
+        // Arrange
+        lenient().when(inputReaderUtil.readSelection()).thenReturn(-1);
+
+        // Act
+        ParkingSpot parkingSpot = parkingService.getNextParkingNumberIfAvailable();
+
+        // Assert
+        assertNull(parkingSpot, "Error parsing user input for type of vehicle");
+    }
 }
