@@ -70,7 +70,6 @@ public class ParkingDataBaseIT {
         // We ensure the next parkingSpot id doesn't match with the current parkingSpot id
         int idNextAvailableSpot = parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR);
         assertNotEquals(ticket.getParkingSpot().getId(), idNextAvailableSpot);
-
     }
 
     @Test
@@ -98,7 +97,5 @@ public class ParkingDataBaseIT {
 
         // We ensure a fare is generated
         assertTrue(ticketAfterExit.getPrice() >= 0, "The fare should be generated");
-
     }
-
 }
