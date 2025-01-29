@@ -16,16 +16,13 @@ public class FareCalculatorService {
         long inSeconds = ticket.getInTime().getTime(); // in time in seconds
         long outSeconds = ticket.getOutTime().getTime(); // out time in seconds
 
-        long durationInSeconds = (outSeconds - inSeconds);
-        long durationInHours = durationInSeconds / (60*60*1000); // milliseconds to hours
+        double durationInSeconds = (outSeconds - inSeconds);
+        double durationInHours = durationInSeconds / (60*60*1000); // milliseconds to hours
 
         if (discount) {
             switch (ticket.getParkingSpot().getParkingType()) {
                 case CAR: {
-                    if (durationInSeconds > (24 * 60 * 60 * 1000)) {
-                        ticket.setPrice(0.95 * (24 + durationInHours) * Fare.CAR_RATE_PER_HOUR);
-                        break;
-                    } else if (durationInSeconds < (30 * 60 * 1000)) {
+                    if (durationInSeconds < (30 * 60 * 1000)) {
                         ticket.setPrice(0);
                         break;
                     } else if (durationInSeconds < (1000 * 60 * 60)) {
@@ -37,10 +34,7 @@ public class FareCalculatorService {
                     }
                 }
                 case BIKE: {
-                    if (durationInSeconds > (24 * 60 * 60 * 1000)) {
-                        ticket.setPrice(0.95 * (24 + durationInHours) * Fare.BIKE_RATE_PER_HOUR);
-                        break;
-                    } else if (durationInSeconds < (30 * 60 * 1000)) {
+                    if (durationInSeconds < (30 * 60 * 1000)) {
                         ticket.setPrice(0);
                         break;
                     } else if (durationInSeconds < (1000 * 60 * 60)) {
@@ -57,10 +51,7 @@ public class FareCalculatorService {
         } else {
             switch (ticket.getParkingSpot().getParkingType()) {
                 case CAR: {
-                    if (durationInSeconds > (24 * 60 * 60 * 1000)) {
-                        ticket.setPrice((24 + durationInHours) * Fare.CAR_RATE_PER_HOUR);
-                        break;
-                    } else if (durationInSeconds < (30 * 60 * 1000)) {
+                    if (durationInSeconds < (30 * 60 * 1000)) {
                         ticket.setPrice(0);
                         break;
                     } else if (durationInSeconds < (1000 * 60 * 60)) {
@@ -72,10 +63,7 @@ public class FareCalculatorService {
                     }
                 }
                 case BIKE: {
-                    if (durationInSeconds > (24 * 60 * 60 * 1000)) {
-                        ticket.setPrice((24 + durationInHours) * Fare.BIKE_RATE_PER_HOUR);
-                        break;
-                    } else if (durationInSeconds < (30 * 60 * 1000)) {
+                    if (durationInSeconds < (30 * 60 * 1000)) {
                         ticket.setPrice(0);
                         break;
                     } else if (durationInSeconds < (1000 * 60 * 60)) {
