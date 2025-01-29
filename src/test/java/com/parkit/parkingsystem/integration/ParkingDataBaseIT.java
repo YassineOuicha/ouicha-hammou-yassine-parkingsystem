@@ -18,8 +18,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -58,23 +57,48 @@ public class ParkingDataBaseIT {
 
     @Test
     public void testParkingACar(){
+        // We initialise the parking service
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
+
+        // We process an incoming vehicle
         parkingService.processIncomingVehicle();
 
+        // We ensure that the ticket exist means the ticket is saved in database
         Ticket ticket = ticketDAO.getTicket("ABCDEF");
         assertNotNull(ticket);
 
-        verify(ticketDAO, Mockito.times(1)).saveTicket(ticket);
-        assertEquals(-1, parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR));
-        verify(parkingSpotDAO, Mockito.times(1)).updateParking(any(ParkingSpot.class));
+        // We ensure the next parkingSpot id doesn't match with the current parkingSpot id
+        int idNextAvailableSpot = parkingSpotDAO.getNextAvailableSlot(ParkingType.CAR);
+        assertNotEquals(ticket.getParkingSpot().getId(), idNextAvailableSpot);
+
     }
 
     @Test
     public void testParkingLotExit(){
+
+        // We simulate the vehicle entry to the parking
         testParkingACar();
+
+        // We ensure a ticket is generated after entry
+        Ticket ticketBeforeExit = ticketDAO.getTicket("ABCDEF");
+        assertNotNull(ticketBeforeExit);
+
+        // We initialise the parking service
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
+
+        // We process an exiting vehicle
         parkingService.processExitingVehicle();
-        //TODO: check that the fare generated and out time are populated correctly in the database
+
+        // We ensure a ticket is generated after exiting
+        Ticket ticketAfterExit = ticketDAO.getTicket("ABCDEF");
+        assertNotNull(ticketAfterExit);
+
+        // We ensure a checkout time is generated
+        assertTrue(ticketAfterExit.getOutTime().getTime()>0, "The checkout time should be calculated");
+
+        // We ensure a fare is generated
+        assertTrue(ticketAfterExit.getPrice() >= 0, "The fare should be generated");
+
     }
 
 }

@@ -36,7 +36,7 @@ public class ParkingService {
                     System.out.println("Happy to see you again! As a regular user of our parking you will receive a 5% discount!");
                 }
                 parkingSpot.setAvailable(false);
-                parkingSpotDAO.updateParking(parkingSpot);//allow this parking space and mark it's availability as false
+                parkingSpotDAO.updateParking(parkingSpot);// allow this parking space and mark it's availability as false
 
                 Date inTime = new Date();
                 Ticket ticket = new Ticket();
