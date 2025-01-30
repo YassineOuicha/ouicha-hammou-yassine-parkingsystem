@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0.215" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.parkit.parkingsystem.FareCalculatorServiceTest" time="1.633" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="maven.user.extensions" value="C:\Users\User/.m2/extensions.xml"/>
@@ -19,7 +19,7 @@
     <property name="user.country" value="FR"/>
     <property name="session.topDirectory" value="C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire2278360042799806996\surefirebooter18229121189175435967.jar C:\Users\User\AppData\Local\Temp\surefire2278360042799806996 2025-01-30T12-45-37_722-jvmRun1 surefire18231082746806205176tmp surefire_017148418235282657359tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire2579797401492646003\surefirebooter4612230095292187754.jar C:\Users\User\AppData\Local\Temp\surefire2579797401492646003 2025-01-30T13-44-29_687-jvmRun1 surefire9165962708784358392tmp surefire_013571256054321001823tmp"/>
     <property name="maven.project.settings" value="${session.rootDirectory}/.mvn/settings.xml"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\target\test-classes;C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\target\classes;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-api\2.12.1\log4j-api-2.12.1.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-core\2.12.1\log4j-core-2.12.1.jar;C:\Users\User\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.2\junit-jupiter-api-5.3.2.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.3.2\junit-platform-commons-1.3.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.2\junit-jupiter-engine-5.3.2.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.3.2\junit-platform-engine-1.3.2.jar;C:\Users\User\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\User\.m2\repository\org\mockito\mockito-core\2.23.4\mockito-core-2.23.4.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.9.3\byte-buddy-1.9.3.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.3\byte-buddy-agent-1.9.3.jar;C:\Users\User\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;"/>
@@ -37,7 +37,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="maven.project.conf" value="${session.rootDirectory}/.mvn"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire2278360042799806996\surefirebooter18229121189175435967.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire2579797401492646003\surefirebooter4612230095292187754.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -71,7 +71,7 @@
     <property name="maven.user.settings" value="C:\Users\User/.m2/settings.xml"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="calculateFareBikeWithLessThan30minutesParkingTimeDescription" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
+  <testcase name="calculateFareBikeWithLessThan30minutesParkingTimeDescription" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0.006"/>
   <testcase name="calculateFareBikeWithDiscount" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
   <testcase name="calculateFareCarWithLessThanOneHourParkingTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
   <testcase name="calculateFareCarWithDiscount" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
@@ -81,5 +81,5 @@
   <testcase name="calculateFareCarWithLessThan30minutesParkingTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
   <testcase name="calculateFareCarWithMoreThanADayParkingTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
   <testcase name="calculateFareBikeWithLessThanOneHourParkingTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0"/>
-  <testcase name="calculateFareBikeWithFutureInTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="0.17"/>
+  <testcase name="calculateFareBikeWithFutureInTime" classname="com.parkit.parkingsystem.FareCalculatorServiceTest" time="1.588"/>
 </testsuite>
