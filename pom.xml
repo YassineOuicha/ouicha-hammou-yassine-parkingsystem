@@ -10,8 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source> <!-- Changer à Java 17 -->
+        <maven.compiler.target>17</maven.compiler.target> <!-- Changer à Java 17 -->
     </properties>
 
     <dependencies>
@@ -66,19 +66,18 @@
                 </configuration>
             </plugin>
 
+            <!-- JaCoCo plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>0.8.9</version>
                 <executions>
-
                     <execution>
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>report</id>
                         <phase>post-integration-test</phase>
@@ -87,6 +86,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <targetJavaVersion>17</targetJavaVersion> <!-- Spécifier Java 17 pour JaCoCo -->
+                </configuration>
             </plugin>
 
             <plugin>
@@ -112,15 +114,17 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Java compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>23</source>
-                    <target>23</target>
-                    <compilerArgs>--enable-preview</compilerArgs>
+                    <source>17</source> <!-- Changer à Java 17 -->
+                    <target>17</target> <!-- Changer à Java 17 -->
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
