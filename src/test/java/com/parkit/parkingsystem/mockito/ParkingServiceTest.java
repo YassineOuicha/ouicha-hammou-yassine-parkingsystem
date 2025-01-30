@@ -24,16 +24,14 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class ParkingServiceTest {
 
-    @Mock
-    private static ParkingService parkingService;
+    private ParkingService parkingService;
 
     @Mock
-    private static InputReaderUtil inputReaderUtil;
+    private InputReaderUtil inputReaderUtil;
     @Mock
-    private static ParkingSpotDAO parkingSpotDAO;
+    private ParkingSpotDAO parkingSpotDAO;
     @Mock
-    private static TicketDAO ticketDAO;
-
+    private TicketDAO ticketDAO;
 
     @BeforeEach
     public void setUpPerTest() {
@@ -137,7 +135,7 @@ public class ParkingServiceTest {
         ParkingSpot parkingSpot = parkingService.getNextParkingNumberIfAvailable();
 
         // Assert
-        assertNull(parkingSpot, "Error fetching parking number from DB. Parking slots might be full");
+        assertNull(parkingSpot);
 
     }
 
@@ -151,6 +149,6 @@ public class ParkingServiceTest {
         ParkingSpot parkingSpot = parkingService.getNextParkingNumberIfAvailable();
 
         // Assert
-        assertNull(parkingSpot, "Error parsing user input for type of vehicle");
+        assertNull(parkingSpot);
     }
 }

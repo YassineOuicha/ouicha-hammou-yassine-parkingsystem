@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="2.557" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="3.684" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="maven.user.extensions" value="C:\Users\User/.m2/extensions.xml"/>
@@ -19,7 +19,7 @@
     <property name="user.country" value="FR"/>
     <property name="session.topDirectory" value="C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire7262690007904609630\surefirebooter4490123724121984995.jar C:\Users\User\AppData\Local\Temp\surefire7262690007904609630 2025-01-30T20-07-10_544-jvmRun1 surefire4776214580096924099tmp surefire_06136530836921783609tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire7507906759342343890\surefirebooter8240819662312399084.jar C:\Users\User\AppData\Local\Temp\surefire7507906759342343890 2025-01-30T20-53-46_210-jvmRun1 surefire18261335518229413307tmp surefire_011678043468009809291tmp"/>
     <property name="maven.project.settings" value="${session.rootDirectory}/.mvn/settings.xml"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\target\test-classes;C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\target\classes;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-api\2.12.1\log4j-api-2.12.1.jar;C:\Users\User\.m2\repository\org\apache\logging\log4j\log4j-core\2.12.1\log4j-core-2.12.1.jar;C:\Users\User\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.2\junit-jupiter-api-5.3.2.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.3.2\junit-platform-commons-1.3.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.2\junit-jupiter-engine-5.3.2.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.3.2\junit-platform-engine-1.3.2.jar;C:\Users\User\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\User\.m2\repository\org\mockito\mockito-core\2.23.4\mockito-core-2.23.4.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.9.3\byte-buddy-1.9.3.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.3\byte-buddy-agent-1.9.3.jar;C:\Users\User\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;"/>
@@ -37,7 +37,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="maven.project.conf" value="${session.rootDirectory}/.mvn"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire7262690007904609630\surefirebooter4490123724121984995.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire7507906759342343890\surefirebooter8240819662312399084.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -71,10 +71,10 @@
     <property name="maven.user.settings" value="C:\Users\User/.m2/settings.xml"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testGetNextParkingNumberIfAvailableParkingNumberNotFound" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="2.238"/>
+  <testcase name="testGetNextParkingNumberIfAvailableParkingNumberNotFound" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="3.109"/>
   <testcase name="processExitingVehicleTestUnableUpdate" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.005"/>
-  <testcase name="testGetNextParkingNumberIfAvailableParkingNumberWrongArgument" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.296"/>
-  <testcase name="testGetNextParkingNumberIfAvailable" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.002"/>
-  <testcase name="processExitingVehicleTest" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.005"/>
-  <testcase name="testProcessIncomingVehicle" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.007"/>
+  <testcase name="testGetNextParkingNumberIfAvailableParkingNumberWrongArgument" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.554"/>
+  <testcase name="testGetNextParkingNumberIfAvailable" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.004"/>
+  <testcase name="processExitingVehicleTest" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.002"/>
+  <testcase name="testProcessIncomingVehicle" classname="com.parkit.parkingsystem.mockito.ParkingServiceTest" time="0.006"/>
 </testsuite>
