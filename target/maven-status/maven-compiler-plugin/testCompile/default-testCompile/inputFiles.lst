@@ -1,6 +1,7 @@
-C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\FareCalculatorServiceTest.java
 C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\integration\config\DataBaseTestConfig.java
 C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\integration\ParkingDataBaseIT.java
 C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\integration\service\DataBasePrepareService.java
-C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\ParkingServiceTest.java
-C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\ParkingSpotDAOTest.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\mockito\FareCalculatorServiceTest.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\mockito\ParkingServiceTest.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\mockito\ParkingSpotDAOTest.java
+C:\Users\User\OneDrive\Desktop\Y.Ouicha\OpenClassrooms\Projet_N4\ouicha-hammou-yassine-parkingsystem\src\test\java\com\parkit\parkingsystem\mockito\TicketDAOTest.java
