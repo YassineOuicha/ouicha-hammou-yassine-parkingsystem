@@ -53,11 +53,6 @@ public class ParkingDataBaseIT {
         dataBasePrepareService.clearDataBaseEntries();
     }
 
-    @AfterAll
-    public static void tearDown(){
-
-    }
-
     @Test
     public void testParkingACar(){
         // We initialise the parking service
@@ -145,3 +140,4 @@ public class ParkingDataBaseIT {
         assertEquals(expectedPrice, ticketAfterExit.getPrice(), 0.01, "Fare should be reduced by 5% for a recurring user");
     }
 }
+
