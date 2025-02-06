@@ -90,7 +90,6 @@ public class TicketDAO {
     public int getNbTicket(String vehicleRegNumber){
         int countTicket =0;
         Connection con = null;
-
         try{
             con = dataBaseConfig.getConnection();
             PreparedStatement ps = con.prepareStatement(DBConstants.REGULAR_USER_COUNT);
@@ -101,9 +100,9 @@ public class TicketDAO {
             }
             dataBaseConfig.closeResultSet(rs);
             dataBaseConfig.closePreparedStatement(ps);
-
         } catch ( Exception e){
-            logger.error("Error fetching ticket count for the vehicle with registration nulber : "  + vehicleRegNumber, e);
+            logger.error("Error fetching ticket count for the vehicle with registration number :"
+                    + " {}", vehicleRegNumber, e);
         } finally {
             dataBaseConfig.closeConnection(con);
         }
