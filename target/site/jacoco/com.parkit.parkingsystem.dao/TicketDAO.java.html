@@ -90,24 +90,23 @@ import java.sql.Timestamp;
     public int getNbTicket(String vehicleRegNumber){
 <span class="fc" id="L91">        int countTicket =0;</span>
 <span class="fc" id="L92">        Connection con = null;</span>
-
         try{
-<span class="fc" id="L95">            con = dataBaseConfig.getConnection();</span>
-<span class="fc" id="L96">            PreparedStatement ps = con.prepareStatement(DBConstants.REGULAR_USER_COUNT);</span>
-<span class="fc" id="L97">            ps.setString(1, vehicleRegNumber);</span>
-<span class="fc" id="L98">            ResultSet rs = ps.executeQuery();</span>
-<span class="pc bpc" id="L99" title="1 of 2 branches missed.">            if(rs.next()){</span>
-<span class="fc" id="L100">                countTicket = rs.getInt(1);</span>
+<span class="fc" id="L94">            con = dataBaseConfig.getConnection();</span>
+<span class="fc" id="L95">            PreparedStatement ps = con.prepareStatement(DBConstants.REGULAR_USER_COUNT);</span>
+<span class="fc" id="L96">            ps.setString(1, vehicleRegNumber);</span>
+<span class="fc" id="L97">            ResultSet rs = ps.executeQuery();</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">            if(rs.next()){</span>
+<span class="fc" id="L99">                countTicket = rs.getInt(1);</span>
             }
-<span class="fc" id="L102">            dataBaseConfig.closeResultSet(rs);</span>
-<span class="fc" id="L103">            dataBaseConfig.closePreparedStatement(ps);</span>
-
-<span class="nc" id="L105">        } catch ( Exception e){</span>
-<span class="nc" id="L106">            logger.error(&quot;Error fetching ticket count for the vehicle with registration nulber : &quot;  + vehicleRegNumber, e);</span>
+<span class="fc" id="L101">            dataBaseConfig.closeResultSet(rs);</span>
+<span class="fc" id="L102">            dataBaseConfig.closePreparedStatement(ps);</span>
+<span class="nc" id="L103">        } catch ( Exception e){</span>
+<span class="nc" id="L104">            logger.error(&quot;Error fetching ticket count for the vehicle with registration number :&quot;</span>
+                    + &quot; {}&quot;, vehicleRegNumber, e);
         } finally {
-<span class="fc" id="L108">            dataBaseConfig.closeConnection(con);</span>
+<span class="fc" id="L107">            dataBaseConfig.closeConnection(con);</span>
         }
-<span class="fc" id="L110">        return countTicket;</span>
+<span class="fc" id="L109">        return countTicket;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

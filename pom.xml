@@ -10,8 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source> <!-- Changer à Java 17 -->
-        <maven.compiler.target>17</maven.compiler.target> <!-- Changer à Java 17 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -59,14 +59,11 @@
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
+                        <include>**/*IT.java</include>
                     </includes>
-                    <excludes>
-                        <exclude>**/*IT.java</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
 
-            <!-- JaCoCo plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -87,7 +84,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <targetJavaVersion>17</targetJavaVersion> <!-- Spécifier Java 17 pour JaCoCo -->
+                    <targetJavaVersion>17</targetJavaVersion>
                 </configuration>
             </plugin>
 
@@ -115,13 +112,12 @@
                 </executions>
             </plugin>
 
-            <!-- Java compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>17</source> <!-- Changer à Java 17 -->
-                    <target>17</target> <!-- Changer à Java 17 -->
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
 

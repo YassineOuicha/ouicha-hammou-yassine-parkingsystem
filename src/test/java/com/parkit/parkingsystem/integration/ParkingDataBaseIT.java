@@ -85,6 +85,7 @@ public class ParkingDataBaseIT {
         // We ensure a ticket is generated after exiting
         Ticket ticketAfterExit = ticketDAO.getTicket("ABCDEF");
         assertNotNull(ticketAfterExit);
+        ticketDAO.saveTicket(ticketAfterExit);
 
         // We ensure a checkout time is generated
         assertTrue(ticketAfterExit.getOutTime().getTime()>0, "The checkout time should be calculated");

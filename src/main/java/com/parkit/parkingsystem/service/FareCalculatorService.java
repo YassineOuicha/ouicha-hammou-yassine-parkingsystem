@@ -7,6 +7,7 @@ public class FareCalculatorService {
 
     private final double DISCOUNT_RATE = 0.95;
     private final double LESS_THAN_AN_HOUR_RATE = 0.75;
+
     public void calculateFare(Ticket ticket){
         calculateFare(ticket, false);
     }
